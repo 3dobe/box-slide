@@ -1,0 +1,70 @@
+.scenes {
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -o-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+}
+.scenes .scene {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  width: 1000px;
+}
+.note {
+  margin-left: 30px;
+  display: inline-block;
+}
+.desc {
+  font-size: 130%;
+}
+.floor {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px gray solid;
+}
+.floor.n1 {
+  content: "30deg";
+  left: 0;
+  width: 200px;
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -o-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+}
+.floor.n2 {
+  width: 9000px;
+  left: 200px;
+}
+.box {
+  position: absolute;
+  background-color: orange;
+  width: 24px;
+  height: 24px;
+  transform-origin: center bottom;
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+}
+.box.n1 {
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  left: 14.79491924px;
+  bottom: 100px;
+}
+

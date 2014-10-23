@@ -1,0 +1,82 @@
+@space-scale: 0.9;
+@space-height: 140px;
+
+@floor-width-n1: 200px;
+@floor-width-n2: 9000px;
+
+@slope-deg: 30deg;
+@slope-rad: unit(@slope-deg) * pi() / 180;
+
+@box-width: 24px;
+@box-height: 24px;
+
+
+.-transform-origin(@vars) {
+  transform-origin: @vars;
+  -webkit-transform-origin: @vars;
+  -moz-transform-origin: @vars;
+  -o-transform-origin: @vars;
+  -ms-transform-origin: @vars;
+}
+.-transform(@vars) {
+  transform: @vars;
+  -webkit-transform: @vars;
+  -moz-transform: @vars;
+  -o-transform: @vars;
+  -ms-transform: @vars;
+}
+
+
+.scenes {
+  // todo: browser vendor prefixes
+  .-transform-origin(left top);
+  .-transform(scale(@space-scale));
+
+  .scene {
+    position: relative;
+    height: @space-height;
+    overflow: hidden;
+    width: 1000px;
+  }
+}
+
+.note {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.desc {
+  font-size: 130%;
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+
+  &.n1 {
+    content: "@{slope-deg}";
+    left: 0;
+    width: @floor-width-n1;
+    .-transform-origin(right center);
+    .-transform(rotate(@slope-deg));
+  }
+
+  &.n2 {
+    width: @floor-width-n2;
+    left: @floor-width-n1;
+  }
+}
+
+.box {
+  position: absolute;
+  background-color: orange;
+  width: @box-width;
+  height: @box-height;
+  .-transform-origin(center bottom);
+
+  &.n1 {
+    .-transform(rotate(@slope-deg));
+    left: @floor-width-n1 * (1 - cos(@slope-rad)) - @box-width/2;
+    bottom: @floor-width-n1 * sin(@slope-rad);
+  }
+}
